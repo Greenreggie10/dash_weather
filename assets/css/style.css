@@ -1,0 +1,20 @@
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: #333333;
+    padding-bottom: 40px;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(6, 6, 78);
+    background: linear-gradient(63deg, rgba(0,84,213,1) 0%, rgba(9,9,121,1) 55%, rgba(2,0,46,1) 100%);
+    color: white;
+    margin-bottom: 12px;
+}
+
+header h1 {
+    font-weight: bold;
+    padding: 14px 20px;
+}
+
+
