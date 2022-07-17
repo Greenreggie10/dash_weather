@@ -19,9 +19,12 @@ This ia a webpage with APIs allowing developers to access their data and functio
 
 
 <!-- author & contributors -->
-REGINALD GREEN GITHUB@GREENREGGIE10
+REGINALD GREEN
+
+Github:GITHUB@GREENREGGIE10
 
 Email:Reggie.green10@yahoo.com
 
 <!-- updates -->
 "inital"
+"city location"
