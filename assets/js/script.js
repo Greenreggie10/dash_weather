@@ -56,11 +56,18 @@ function dailySearch(data,citySearch) {
     var htmlTEXT = `<h3>${citySearch}</h3>
     <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" /><span> ${data.current.weather[0].description} </span><p>Temperature: ${data.current.temp}</p><a>Humidity: ${data.current.humidity}</a><h4>wind: ${data.current.wind_speed}</h4><h6>UV index ${data.current.uvi}</h6>`
     daiyResults.innerHTML = htmlTEXT
-    
+
+    var forecastHTML = ""
+
+    for(let i=1;i<=5;i++){
+        forecastHTML += `
+        <h3>${citySearch}</h3>
+    <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" /><span> ${data.daily[i].weather[0].description} </span><p>Temperature: ${data.daily[i].temp.day}</p><a>Humidity: ${data.daily[i].humidity}</a><h4>wind: ${data.daily[i].wind_speed}</h4><h6>UV index ${data.daily[i].uvi}</h6>`
+    }
+document.querySelector('.five-day-forecast').innerHTML = forecastHTML
+};
 
 
-
-}
 
 
 

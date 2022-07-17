@@ -28,3 +28,4 @@ Email:Reggie.green10@yahoo.com
 <!-- updates -->
 "inital"
 "city location"
+"daily Display"
