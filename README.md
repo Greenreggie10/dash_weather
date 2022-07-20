@@ -3,7 +3,12 @@
 # weather_Dash
 
 <!-- list of technologies used -->
-/*HTML, CSS, & JavaScript*/
+/*The website is built and developed using Visual Studio Code (VS Code).
+/*HTML was used to create the app's content.
+/*CSS & Bootstrap was used to style and format the dashboard.
+/*JavaScript was used to fetch data and dynamically display the weather.
+/*All city searches are saved to local storage for retrieval across browser sessions.
+/*Github hosts the repository and published the website.*/
 
 <!-- URL to hosted site -->
 [live demo](https://greenreggie10.github.io/dash_weather/);
@@ -29,3 +34,4 @@ Email:Reggie.green10@yahoo.com
 "inital"
 "city location"
 "daily Display"
+"Fiveday row"

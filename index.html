@@ -17,9 +17,6 @@
     <body>
         <header>
             <h1>Weather Dashboard</h1>
-
-            </title>
-        
         </header>
         
         <main>
@@ -31,11 +28,35 @@
             <input type="text" name="city-search" id="city-search" placeholder="Enter City Name"></input>
             <button id="search" class="search btn">Search</button>
         </div>
+         <div>
+             <ul id="search-list"></ul>
+         </div>   
+         
         </section>
-    <section class="col-md-8 col-lg-9 results">
 
-    </section>
-        <div class="five-day-forecast col-md-8 col-lg-9"> </div>
+        <div class="results">
+            <!-- today's weather -->
+            <div id="weather-today">
+                <div id="current-header" class="today-header">
+                    <h3 id="results-title"></h3> 
+                    <span class="icon-box">
+                        <img id="today-icon"></img>
+                    </span>
+                </div>
+
+        <div>
+        <p id="results-temp"></p>
+        <p id="results-wind"></p>
+        <p id="results-humidity"></p>
+        <div id="UV-box" class="today-header">
+            <p id="results-UV"></p>
+            <span id="UV-Index" class="index-box"></span>
+        </div>
+        </div>
+
+        <div id="forecast " class="forecast col-md-8 col-lg-9"></div>
+    
+</div>
         
         </main>
         

@@ -43,32 +43,62 @@ function locationSearch (citySearch) {
             })
             .then(function(data) {
                 console.log("citysearch",data);
+                var storageFinder = JSON.parse(localStorage.getItem('weatherDashboard'))||[]
+                if(storageFinder.indexOf(citySearch) === -1){
+                    storageFinder.push(citySearch);
+                    localStorage.setItem('weatherDashboard', JSON.stringify(storageFinder));
+                    getLocalStorage()
+                }
                 dailySearch(data,citySearch);
             });
         });
+    };        
+    
+    
+    
+    
+    function dailySearch(data, citySearch) {
+        var dailyResults = document.querySelector('.results');
+        console.log("dailySearch", dailyResults);
+        var htmlText = `<h3>${citySearch}</h3>
+        <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" /><span> ${data.current.weather[0].description} </span><p>Temperature: ${data.current.temp}</p><a>Humidity: ${data.current.humidity}</a><h4>wind: ${data.current.wind_speed}</h4><h6>UV index ${data.current.uvi}</h6>`;
+        dailyResults.innerHTML = htmlText
         
+        var forecastHTML = ""
+        
+        for (let i = 1; i <= 5; i++) {
+            forecastHTML += `
+            <h3>${citySearch}</h3>
+            <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" /><span> ${data.daily[i].weather[0].description} </span><p>Temperature: ${data.daily[i].temp.day}</p><a>Humidity: ${data.daily[i].humidity}</a><h4>wind: ${data.daily[i].wind_speed}</h4><h6>UV index ${data.daily[i].uvi}</h6>`
+            ;
+            var forecast = document.querySelector('.forecast');
+            console.log(forecast);
+            five_day_forcast.innerHTML = forecastHTML;
 
-}
-     
-function dailySearch(data,citySearch) {
-    var daiyResults = document.querySelector('.results');
-    console.log("dailySearch",daiyResults);
-    var htmlTEXT = `<h3>${citySearch}</h3>
-    <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" /><span> ${data.current.weather[0].description} </span><p>Temperature: ${data.current.temp}</p><a>Humidity: ${data.current.humidity}</a><h4>wind: ${data.current.wind_speed}</h4><h6>UV index ${data.current.uvi}</h6>`
-    daiyResults.innerHTML = htmlTEXT
-
-    var forecastHTML = ""
-
-    for(let i=1;i<=5;i++){
-        forecastHTML += `
-        <h3>${citySearch}</h3>
-    <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" /><span> ${data.daily[i].weather[0].description} </span><p>Temperature: ${data.daily[i].temp.day}</p><a>Humidity: ${data.daily[i].humidity}</a><h4>wind: ${data.daily[i].wind_speed}</h4><h6>UV index ${data.daily[i].uvi}</h6>`
     }
-document.querySelector('.five-day-forecast').innerHTML = forecastHTML
 };
 
 
 
+function getLocalStorage() {
+    var storageFinder = JSON.parse(localStorage.getItem('weatherDashboard'))||[]
+    var storeageHtml = "";
+    for (let i = 0; i < storageFinder.length; i++) {
+        storeageHtml +=`<li><button data-city="${storageFinder[i]}" class="search-city-list"> ${storageFinder[i]}</button></li>`
+        
+    }
+    document.getElementById('search-list').innerHTML = storeageHtml;
+    var list = document.querySelectorAll(".search-city-list")
+    list.forEach(element => element.addEventListener("click",btnsearch))
+};
+
+
+
+getLocalStorage();
+
+function btnsearch(){
+  console.log(this.textcontent)
+}
 
 
 
