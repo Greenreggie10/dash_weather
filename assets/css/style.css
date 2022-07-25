@@ -1,0 +1,222 @@
+
+
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: #333333;
+    padding-bottom: 40px;
+}
+
+.containerDiv {
+  width: 95%;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+section {
+  border: 2px solid ;
+}
+
+.col1 {
+  width: 35%;
+  flex-direction: column;
+  display: flex;
+  margin: 5px;
+  height: auto;
+}
+
+.col2 {
+  width: 85%;
+}
+
+
+.card {
+  width: 19%;
+  height: min-content;
+  background-color: navy;
+  color: white;
+  border-radius: 8px; 
+  text-align: center;
+}
+
+.green {
+  border: 2px solid black;
+  background:green;
+  padding: 5px;
+  color: white;
+}
+
+.yellow {
+  border: 2px solid black;
+  background:yellow;
+  padding: 5px;
+  color: black;
+}
+
+.red {
+  border: 2px solid black;
+  background:red;
+  padding: 5px;
+  color: white;
+}
+
+/* entire page */
+  p { 
+    padding: 10px 5px;
+  }
+  
+header {
+    text-align: center;
+    background-color: rgb(6, 6, 78);
+    background: linear-gradient(63deg, rgba(0,84,213,1) 0%, rgba(9,9,121,1) 55%, rgba(2,0,46,1) 100%);
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* search column styles */
+
+
+/* search flexbox */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  flex: 1 25%;
+  
+  
+}
+
+#forecast-div {
+
+ display: flex;
+ justify-content: space-between;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif
+}
+
+/* entire page */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
+}
+
+p { 
+  padding: 10px 5px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+/* page content */
+main {
+  display: flex;
+}
+
+/* search column/left side of page */
+.col1 {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  flex: 1 25%;
+}
+
+/* search flexbox */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1.5px black solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+textarea {
+  background-color: transparent;
+  resize: none;
+  border-radius: 3px;
+  margin: 10px 0;
+  height: 40%;
+}
+
+.search-box .search-btn {
+  background-color: rgba(33, 130, 241, 0.8);
+  color: white;
+  height: 60%;
+}
+
+/* history flexbox */
+.search-list {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  /* border: 1px black solid; */
+}
+
+.search-btn {
+  border: none;
+  background-color: rgb(194, 193, 193);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  height: 5%;
+}
+/* end of search column */
+
+/* result column/right side of page */
+.result-col {
+  display: flex;
+  flex-direction: column;
+  flex: 4 75%;
+  margin: 10px;
+}
+
+/* today's weather */
+.today-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  height: auto;
+}
+
+.today-header {
+  display: flex;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 10px 0 0px 5px
+}
+
+.icon-box {
+  height: 40px;
+  width: 40px;
+  /* position: relative;
+  top: 0px;    */
+}
+
+.icon {
+  display: inline;
+  width: 100%;
+  height: 100%;
+}
+
+
+

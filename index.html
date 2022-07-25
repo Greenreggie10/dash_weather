@@ -1,18 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Band&#129138;Gogh</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-
-<body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="./assets/css/style.css" rel="stylesheet">
+        <title>Weather Dashboard</title>
+    </head>
     
-    <script src="./assets/js/script.js"></script>
-</body>
-
-</html>
+    <body>
+            <!-- page flexbox -->
+            <div class="containerDiv">
+                <!-- page header -->
+                <header>
+                    <h1>Weather Dashboard</h1>
+                </header>
+                <!-- page content -->
+                <main>
+                    <!-- left side of page/search column -->
+                    <div class="col1">
+                        <form class="search-box">
+                            <h2>Search for a City:</h2>
+                            <textarea placeholder="Enter City Name"></textarea>
+                            <button type="city" id="city-search" class="search-btn">Search</button>
+                        </form>
+                        <div class="search-list"></div>
+                    </div>
+                    <!-- right side of pag/ results column -->
+                    <div class="col2">
+                        <!-- today's weather -->
+                        <div id="results" class="results">
+                            <div id="current-header" class="today-header">
+                                <h3 id="result-title"></h3> 
+                                <span class="icon-box">
+                                    <img id="today-icon"></img>
+                                </span>
+                            </div>
+                            <p id="result-temp"></p>
+                            <p id="result-wind"></p>
+                            <p id="result-humidity"></p>
+                            <div id="UV-box" class="today-header">
+                                <p id="result-UV"></p>
+                                <span id="UV-Index" class="index-box"></span>
+                            </div>
+                
+                        </div>
+                        <!-- five day forecast -->
+                        <h6><strong> 5-Day Forecast:</strong></h6>
+                        <div id="forecast-div" class="forecast-div">
+                            <h4 id="five-day-title"></h4>
+                        </div>
+                    </div>
+                </main>
+                <footer>   
+                <button id="remove-tasks" class="btn btn-block btn-danger">Clear History</button> </footer>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="./assets/js/config.js"></script>
+        <script src="./assets/js/script.js"></script>
+        
+    </body>
+    </html>
+    
+    
+    
+    
