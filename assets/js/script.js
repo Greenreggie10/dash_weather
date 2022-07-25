@@ -16,8 +16,9 @@ var searchBtn = document.getElementById("search");
 var inputElement = document.getElementById("#city-search");
 var resultsDiv = document.getElementById("results");
 var cityName = document.querySelector("input");
-
+var five_day_forcastEl = document.querySelector("#forecast-div");
 var API = "286de79db450c76b40b056833d811f67";
+
 searchBtn.addEventListener("click",function(event){
     var citySearch = document.getElementById("city-search").value; 
     locationSearch(citySearch)
@@ -41,6 +42,8 @@ function locationSearch (citySearch) {
             .then(function(response) {
                 return response.json();
             })
+
+            
             .then(function(data) {
                 console.log("citysearch",data);
                 var storageFinder = JSON.parse(localStorage.getItem('weatherDashboard'))||[]
@@ -59,25 +62,35 @@ function locationSearch (citySearch) {
     
     function dailySearch(data, citySearch) {
         var dailyResults = document.querySelector('.results');
-        console.log("dailySearch", dailyResults);
-        var htmlText = `<h3>${citySearch}</h3>
-        <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" /><span> ${data.current.weather[0].description} </span><p>Temperature: ${data.current.temp}</p><a>Humidity: ${data.current.humidity}</a><h4>wind: ${data.current.wind_speed}</h4><h6>UV index ${data.current.uvi}</h6>`;
-        dailyResults.innerHTML = htmlText
+        let color = ui => ui>5 ? 'green' : ui>8 ? 'yellow' : 'red';
+        // console.log("dailySearch", dailyResults);
+        var htmlText = `<h3>${citySearch} ${new Date(data.current.dt*1000).toLocaleDateString()}</h3>
+        <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" />
+        <h4> ${data.current.weather[0].description} </h4>
+        <h4>Temperature: ${data.current.temp}</h4>
+        <h4>Humidity: ${data.current.humidity}</h4>
+        <h4>wind: ${data.current.wind_speed}</h4>
+        <h4>UV index: <sapn class='${color(data.current.uvi)}'> ${data.current.uvi}</span></h4>`;
+       
+        dailyResults.innerHTML = htmlText;
         
         var forecastHTML = ""
         
         for (let i = 1; i <= 5; i++) {
             forecastHTML += `
-            <h3>${citySearch}</h3>
-            <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" /><span> ${data.daily[i].weather[0].description} </span><p>Temperature: ${data.daily[i].temp.day}</p><a>Humidity: ${data.daily[i].humidity}</a><h4>wind: ${data.daily[i].wind_speed}</h4><h6>UV index ${data.daily[i].uvi}</h6>`
-            ;
-            var forecast = document.querySelector('.forecast');
-            console.log(forecast);
-            five_day_forcast.innerHTML = forecastHTML;
-
-    }
-};
-
+            <div class="card">
+                <h5> ${new Date(data.current.dt*1000).toLocaleDateString()}</h5>
+                <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" />
+                <span> ${data.daily[i].weather[0].description} </span>
+                <h6>Temperature: ${data.daily[i].temp.day}</h6>
+                <h6>Humidity: ${data.daily[i].humidity}</h6>
+                <h6>wind: ${data.daily[i].wind_speed}</h6>
+            </div>`
+        }
+        five_day_forcastEl.innerHTML = forecastHTML;              
+        console.log(five_day_forcastEl)
+};                 
+                                                                  
 
 
 function getLocalStorage() {
@@ -89,49 +102,25 @@ function getLocalStorage() {
     }
     document.getElementById('search-list').innerHTML = storeageHtml;
     var list = document.querySelectorAll(".search-city-list")
-    list.forEach(element => element.addEventListener("click",btnsearch))
+    list.forEach(element => element.addEventListener("click", btnsearch))
 };
 
 
 
 getLocalStorage();
 
-function btnsearch(){
-  console.log(this.textcontent)
+function btnsearch(event){
+  locationSearch(event.target.dataset.city)
 }
 
 
 
 
 
+//remove all tasks
+$("#remove-tasks").on("click", function() {
+    document.getElementById('search-list').innerHTML = '';
+    localStorage.removeItem('weatherDashboard');
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //remove all tasks
-// $("#remove-tasks").on("click", function() {
-//   for (var key in tasks) {
-//     tasks[key].length = 0;
-//     $("#list-" + key).empty();
-//   }
-//   saveTasks();
-// });
-
-// // load tasks for the first time
+// load tasks for the first time

@@ -15,58 +15,59 @@
     </head>
     
     <body>
-        <header>
-            <h1>Weather Dashboard</h1>
-        </header>
-        
-        <main>
-        <div class="container">
-          <div class="row">
-            <section class="col-md-4 col-lg-3 search">
-            <div class="search-form">
-            <H2>Search City:</H2>
-            <input type="text" name="city-search" id="city-search" placeholder="Enter City Name"></input>
-            <button id="search" class="search btn">Search</button>
-        </div>
-         <div>
-             <ul id="search-list"></ul>
-         </div>   
-         
-        </section>
-
-        <div class="results">
-            <!-- today's weather -->
-            <div id="weather-today">
-                <div id="current-header" class="today-header">
-                    <h3 id="results-title"></h3> 
-                    <span class="icon-box">
-                        <img id="today-icon"></img>
-                    </span>
-                </div>
-
-        <div>
-        <p id="results-temp"></p>
-        <p id="results-wind"></p>
-        <p id="results-humidity"></p>
-        <div id="UV-box" class="today-header">
-            <p id="results-UV"></p>
-            <span id="UV-Index" class="index-box"></span>
-        </div>
-        </div>
-
-        <div id="forecast " class="forecast col-md-8 col-lg-9"></div>
-    
-</div>
-        
-        </main>
+            <!-- page flexbox -->
+            <div class="containerDiv">
+                <!-- page header -->
+                <header>
+                    <h1>Weather Dashboard</h1>
+                </header>
+                <!-- page content -->
+                <main>
+                    <!-- left side of page/search column -->
+                    <div class="col1">
+                        <form class="search-box">
+                            <h2>Search for a City:</h2>
+                            <textarea placeholder="Enter City Name"></textarea>
+                            <button type="city" id="city-search" class="search-btn">Search</button>
+                        </form>
+                        <div class="search-list"></div>
+                    </div>
+                    <!-- right side of pag/ results column -->
+                    <div class="col2">
+                        <!-- today's weather -->
+                        <div id="results" class="results">
+                            <div id="current-header" class="today-header">
+                                <h3 id="result-title"></h3> 
+                                <span class="icon-box">
+                                    <img id="today-icon"></img>
+                                </span>
+                            </div>
+                            <p id="result-temp"></p>
+                            <p id="result-wind"></p>
+                            <p id="result-humidity"></p>
+                            <div id="UV-box" class="today-header">
+                                <p id="result-UV"></p>
+                                <span id="UV-Index" class="index-box"></span>
+                            </div>
+                
+                        </div>
+                        <!-- five day forecast -->
+                        <h6><strong> 5-Day Forecast:</strong></h6>
+                        <div id="forecast-div" class="forecast-div">
+                            <h4 id="five-day-title"></h4>
+                        </div>
+                    </div>
+                </main>
+                <footer>   
+                <button id="remove-tasks" class="btn btn-block btn-danger">Clear History</button> </footer>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="./assets/js/config.js"></script>
         <script src="./assets/js/script.js"></script>
+        
     </body>
-    <footer>   
-    <button id="remove-tasks" class="btn btn-block btn-danger">Clear History</button> </footer>
     </html>
     
     

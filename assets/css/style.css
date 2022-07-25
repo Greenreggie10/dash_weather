@@ -1,16 +1,69 @@
+
+
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: #333333;
     padding-bottom: 40px;
 }
 
+.containerDiv {
+  width: 95%;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+section {
+  border: 2px solid ;
+}
+
+.col1 {
+  width: 35%;
+  flex-direction: column;
+  display: flex;
+  margin: 5px;
+  height: auto;
+}
+
+.col2 {
+  width: 85%;
+}
+
+
+.card {
+  width: 19%;
+  height: min-content;
+  background-color: navy;
+  color: white;
+  border-radius: 8px; 
+  text-align: center;
+}
+
+.green {
+  border: 2px solid black;
+  background:green;
+  padding: 5px;
+  color: white;
+}
+
+.yellow {
+  border: 2px solid black;
+  background:yellow;
+  padding: 5px;
+  color: black;
+}
+
+.red {
+  border: 2px solid black;
+  background:red;
+  padding: 5px;
+  color: white;
+}
+
 /* entire page */
-.page-container {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 5px;
-  }
-  
   p { 
     padding: 10px 5px;
   }
@@ -20,37 +73,65 @@ header {
     background-color: rgb(6, 6, 78);
     background: linear-gradient(63deg, rgba(0,84,213,1) 0%, rgba(9,9,121,1) 55%, rgba(2,0,46,1) 100%);
     color: white;
-    margin-bottom: 12px;
-}
-
-header h1 {
-    font-weight: bold;
-    padding: 14px 20px;
-}
-
-.search-col {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1.5px black solid;
-    padding-bottom: 10px;
     margin-bottom: 10px;
-  }
-
-  input {
-    background-color: transparent;
-    resize: none;
-    border-radius: 3px;
-    margin: 10px 0;
-    height: 40%;
-  }
+}
 
 /* search column styles */
-.search-Btn {
-    background-color: rgba(33, 130, 241, 0.8);
-  color: white;
-  height: 60%;
+
+
+/* search flexbox */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  flex: 1 25%;
+  
+  
 }
 
+#forecast-div {
+
+ display: flex;
+ justify-content: space-between;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif
+}
+
+/* entire page */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
+}
+
+p { 
+  padding: 10px 5px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+/* page content */
+main {
+  display: flex;
+}
+
+/* search column/left side of page */
+.col1 {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  flex: 1 25%;
+}
 
 /* search flexbox */
 .search-box {
@@ -73,21 +154,21 @@ textarea {
   height: 40%;
 }
 
-.search-box .btn {
+.search-box .search-btn {
   background-color: rgba(33, 130, 241, 0.8);
   color: white;
   height: 60%;
 }
 
 /* history flexbox */
-.search-history {
+.search-list {
   display: flex;
   flex-direction: column;
   height: 500px;
   /* border: 1px black solid; */
 }
 
-.btn {
+.search-btn {
   border: none;
   background-color: rgb(194, 193, 193);
   border-radius: 3px;
@@ -136,111 +217,6 @@ h3 {
   width: 100%;
   height: 100%;
 }
-
-/* future weather */
-.future-box {
-  display: flex;
-  flex-direction: column;
-  height: 60%;
-}
-
-h4 {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 15px 0 5px 0;
-}
-
-.future-cards {
-  display: flex;
-  justify-content: space-between;
-}
-
-h5 {
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-}
-
-.forecast-card {
- display: flex;
- flex-direction: column;
- background-color: rgb(23, 43, 61);
- padding: 10px;
- width: 15%;
-}
-
-.forecast-card p {
-  color: white;
-  font-size: small;
-}
-/* end of result column */
-
-
-
-/* index colors */
-.low {
-  background-color: green;
-  display: inline-block;
-  height: 22px;
-  width: 40px;
-  border-radius: 3px;
-  position: relative;
-  bottom: -10px;
-  text-align: center;
-  color: white;
-}
-
-.moderate {
-  background-color: yellow;
-  display: inline-block;
-  height: 22px;
-  width: 40px;
-  border-radius: 3px;
-  position: relative;
-  bottom: -10px;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 2px black;
-}
-
-.high {
-  background-color: orange;
-  display: inline-block;
-  height: 22px;
-  width: 40px;
-  border-radius: 3px;
-  position: relative;
-  bottom: -10px;
-  text-align: center;
-  color: white;
-   text-transform: capitalize;
-   
-}
-
-.very-high {
-  background-color: red;
-  display: inline-block;
-  height: 22px;
-  width: 40px;
-  border-radius: 3px;
-  position: relative;
-  bottom: -10px;
-  text-align: center;
-  color: white;
-}
-
-.extreme {
-  background-color: violet;
-  display: inline-block;
-  height: 22px;
-  width: 40px;
-  border-radius: 3px;
-  position: relative;
-  bottom: -10px;
-  text-align: center;
-  color: white;
-}
-
 
 
 
