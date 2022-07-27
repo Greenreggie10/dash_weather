@@ -20,14 +20,18 @@ var five_day_forcastEl = document.querySelector("#forecast-div");
 var API = "286de79db450c76b40b056833d811f67";
 
 searchBtn.addEventListener("click",function(event){
+    event.preventDefault();
     var citySearch = document.getElementById("city-search").value; 
+    console.log(citySearch);
     locationSearch(citySearch)
     
 });    
 
 function locationSearch (citySearch) {
+    console.log(citySearch);
     var locationRequestUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+citySearch+"&appid="+ API;
     console.log("citySearch clicked",citySearch);
+    console.log(locationRequestUrl);
     
         // if the city name is an empty string then alert the user   
         fetch(locationRequestUrl)
@@ -97,10 +101,10 @@ function getLocalStorage() {
     var storageFinder = JSON.parse(localStorage.getItem('weatherDashboard'))||[]
     var storeageHtml = "";
     for (let i = 0; i < storageFinder.length; i++) {
-        storeageHtml +=`<li><button data-city="${storageFinder[i]}" class="search-city-list"> ${storageFinder[i]}</button></li>`
+        storeageHtml +=`<button data-city="${storageFinder[i]}" class="search-city-list btn btn-secondary"> ${storageFinder[i]}</button>`
         
     }
-    document.getElementById('search-list').innerHTML = storeageHtml;
+    document.querySelector('.search-list').innerHTML = storeageHtml;
     var list = document.querySelectorAll(".search-city-list")
     list.forEach(element => element.addEventListener("click", btnsearch))
 };
@@ -119,8 +123,9 @@ function btnsearch(event){
 
 //remove all tasks
 $("#remove-tasks").on("click", function() {
-    document.getElementById('search-list').innerHTML = '';
     localStorage.removeItem('weatherDashboard');
+   location.reload();
+
 });
 
-// load tasks for the first time
+
