@@ -121,7 +121,7 @@ function btnsearch(event){
 
 
 
-//remove all tasks
+//remove clear searchhistory
 $("#remove-tasks").on("click", function() {
     localStorage.removeItem('weatherDashboard');
    location.reload();
