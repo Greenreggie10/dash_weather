@@ -19,11 +19,11 @@
 
 ## !-- stillshot of site -->
 
-![alt text]();
+![alt text](.assets/images/../../assets/images/Screenshot%20(33).png);
 
 ## !-- description of the site purpose -->
 
-This ia a webpage with APIs allowing developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Challenge six is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+This ia a webpage with APIs allowing developers to access their data by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Challenge six is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
 ## !--Testing && Results -->
 /*coding the display of the weather dashboard
@@ -47,3 +47,4 @@ Email:Reggie.green10@yahoo.com
 "daily Display"
 "Fiveday row"
 "search bar edit"
+"buttons/clear history corrected"
