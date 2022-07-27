@@ -18,8 +18,8 @@
 *Type & search the city of your choice*
 
 ## !-- stillshot of site -->
-
-![alt text](.assets/images/../../assets/images/Screenshot%20(33).png);
+Location search for London weather:
+![alt text](.assets/images/../../assets/images/Screenshot%20(33).png)
 
 ## !-- description of the site purpose -->
 
