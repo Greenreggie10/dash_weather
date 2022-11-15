@@ -29,7 +29,7 @@ searchBtn.addEventListener("click",function(event){
 
 function locationSearch (citySearch) {
     console.log(citySearch);
-    var locationRequestUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+citySearch+"&appid="+ API;
+    var locationRequestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+citySearch+"&appid="+ API;
     console.log("citySearch clicked",citySearch);
     console.log(locationRequestUrl);
     
@@ -84,7 +84,7 @@ function locationSearch (citySearch) {
             forecastHTML += `
             <div class="card">
                 <h5> ${new Date(data.current.dt*1000).toLocaleDateString()}</h5>
-                <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" />
+                <img src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png" />
                 <span> ${data.daily[i].weather[0].description} </span>
                 <h6>Temperature: ${data.daily[i].temp.day}</h6>
                 <h6>Humidity: ${data.daily[i].humidity}</h6>
@@ -121,7 +121,7 @@ function btnsearch(event){
 
 
 
-//remove all tasks
+//remove clear searchhistory
 $("#remove-tasks").on("click", function() {
     localStorage.removeItem('weatherDashboard');
    location.reload();

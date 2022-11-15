@@ -6,10 +6,10 @@
 ## !-- list of technologies used -->
 
 /*The website is built and developed using Visual Studio Code (VS Code).
-/*HTML was used to create the app's content.
+/*HTML was used to create the app's content.   
 /*CSS & Bootstrap was used to style and format the dashboard.
-/*JavaScript was used to fetch data and dynamically display/save the weather in local storage .
-/*All city searches are saved to local storage for retrieval across browser sessions.
+/*JavaScript was used to fetch data and dynamically display/save the weather in local storage .  
+/*All city searches are saved to local storage for retrieval across browser sessions.   
 /*Github published the repository website.
 
 ## !-- sites URL-->
@@ -18,8 +18,8 @@
 *Type & search the city of your choice*
 
 ## !-- stillshot of site -->
-
-![alt text](.assets/images/../../assets/images/Screenshot%20(33).png);
+Location search for London weather:
+![alt text](.assets/images/../../assets/images/Screenshot%20(33).png)
 
 ## !-- description of the site purpose -->
 
